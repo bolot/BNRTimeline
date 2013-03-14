@@ -15,5 +15,7 @@
 @property (nonatomic, retain) NSDate *timeStamp;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSData *imageData;
+@property (nonatomic, retain) UIImage *thumbnail;
+@property (nonatomic, retain) NSData *thumbnailData;
 
 @end

@@ -234,7 +234,7 @@
     BNRPhoto *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     BNRPhotoCell *bnrPhotoCell = (BNRPhotoCell *)cell;
     bnrPhotoCell.timeStampLabel.text = [object.timeStamp description];
-    bnrPhotoCell.photoImageView.image = object.image;
+    bnrPhotoCell.photoImageView.image = object.thumbnail;
 }
 
 @end

@@ -50,4 +50,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)share:(id)sender {
+    NSArray *items = @[self.detailItem.thumbnail, @"@bignerdranch iOS tutorial at @mdevcon by @bolot"];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
 @end

@@ -21,8 +21,6 @@
 @dynamic thumbnail;
 @dynamic thumbnailData;
 
-// bolot@bignerdranch.com
-
 
 - (void)setImage:(UIImage *)image
 {

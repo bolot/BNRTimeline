@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BNRPhoto.h"
 
 @interface BNRDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) BNRPhoto *detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

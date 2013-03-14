@@ -27,8 +27,7 @@
 
 - (UIImage *)image
 {
-    // if (self.imageData) <===> self.imageData != nil
-    if (!self.imageData) { // self.imageData == nil
+    if (!self.imageData) {
         return nil;
     }
     if (!_image) {

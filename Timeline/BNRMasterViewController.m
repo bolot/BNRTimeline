@@ -233,6 +233,7 @@
 {
     BNRPhoto *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [object.timeStamp description];
+    cell.imageView.image = object.image;
 }
 
 @end

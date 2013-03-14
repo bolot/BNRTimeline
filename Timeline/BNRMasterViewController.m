@@ -9,8 +9,9 @@
 #import "BNRMasterViewController.h"
 
 #import "BNRDetailViewController.h"
+#import "BNRPhoto.h"
 
-@interface BNRMasterViewController ()
+@interface BNRMasterViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -39,13 +40,20 @@
 
 - (void)insertNewObject:(id)sender
 {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)insertNewObjectWithImage:(UIImage *)image
+{
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    BNRPhoto *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    newManagedObject.timeStamp = [NSDate date];
     
     // Save the context.
     NSError *error = nil;
@@ -55,6 +63,13 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [self insertNewObjectWithImage:image];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table View
@@ -109,7 +124,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        BNRPhoto *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -215,8 +230,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    BNRPhoto *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [object.timeStamp description];
 }
 
 @end

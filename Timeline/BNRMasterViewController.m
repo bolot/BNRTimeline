@@ -10,9 +10,9 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRPhoto.h"
+#import "BNRPhotoCell.h"
 
 @interface BNRMasterViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation BNRMasterViewController
@@ -204,7 +204,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(BNRPhotoCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
@@ -232,8 +232,9 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     BNRPhoto *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [object.timeStamp description];
-    cell.imageView.image = object.image;
+    BNRPhotoCell *bnrPhotoCell = (BNRPhotoCell *)cell;
+    bnrPhotoCell.timeStampLabel.text = [object.timeStamp description];
+    bnrPhotoCell.photoImageView.image = object.image;
 }
 
 @end

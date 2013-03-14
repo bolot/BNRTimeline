@@ -21,6 +21,7 @@
 		DA609EAD16F1FA4F00519286 /* Timeline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA609EAB16F1FA4F00519286 /* Timeline.xcdatamodeld */; };
 		DA609EB016F1FA4F00519286 /* BNRMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA609EAF16F1FA4F00519286 /* BNRMasterViewController.m */; };
 		DA609EB316F1FA4F00519286 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA609EB216F1FA4F00519286 /* BNRDetailViewController.m */; };
+		DA609EBB16F1FD1100519286 /* BNRPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = DA609EBA16F1FD1100519286 /* BNRPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		DA609EAF16F1FA4F00519286 /* BNRMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRMasterViewController.m; sourceTree = "<group>"; };
 		DA609EB116F1FA4F00519286 /* BNRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		DA609EB216F1FA4F00519286 /* BNRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
+		DA609EB916F1FD1100519286 /* BNRPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPhoto.h; sourceTree = "<group>"; };
+		DA609EBA16F1FD1100519286 /* BNRPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				DA609EB116F1FA4F00519286 /* BNRDetailViewController.h */,
 				DA609EB216F1FA4F00519286 /* BNRDetailViewController.m */,
 				DA609EAB16F1FA4F00519286 /* Timeline.xcdatamodeld */,
+				DA609EB916F1FD1100519286 /* BNRPhoto.h */,
+				DA609EBA16F1FD1100519286 /* BNRPhoto.m */,
 				DA609E9716F1FA4F00519286 /* Supporting Files */,
 			);
 			path = Timeline;
@@ -191,6 +196,7 @@
 				DA609EAD16F1FA4F00519286 /* Timeline.xcdatamodeld in Sources */,
 				DA609EB016F1FA4F00519286 /* BNRMasterViewController.m in Sources */,
 				DA609EB316F1FA4F00519286 /* BNRDetailViewController.m in Sources */,
+				DA609EBB16F1FD1100519286 /* BNRPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

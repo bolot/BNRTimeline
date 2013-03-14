@@ -50,6 +50,7 @@
 		DA609EBA16F1FD1100519286 /* BNRPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPhoto.m; sourceTree = "<group>"; };
 		DA609EBC16F214BB00519286 /* BNRPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPhotoCell.h; sourceTree = "<group>"; };
 		DA609EBD16F214BB00519286 /* BNRPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPhotoCell.m; sourceTree = "<group>"; };
+		DA609EBF16F21CBF00519286 /* Timeline2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = Timeline2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,9 +333,10 @@
 		DA609EAB16F1FA4F00519286 /* Timeline.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DA609EBF16F21CBF00519286 /* Timeline2.xcdatamodel */,
 				DA609EAC16F1FA4F00519286 /* Timeline.xcdatamodel */,
 			);
-			currentVersion = DA609EAC16F1FA4F00519286 /* Timeline.xcdatamodel */;
+			currentVersion = DA609EBF16F21CBF00519286 /* Timeline2.xcdatamodel */;
 			path = Timeline.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

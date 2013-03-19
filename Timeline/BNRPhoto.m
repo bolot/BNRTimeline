@@ -11,7 +11,6 @@
 
 @implementation BNRPhoto
 {
-    UIImage *_image;
     UIImage *_thumbnail;
 }
 
@@ -24,7 +23,6 @@
 
 - (void)setImage:(UIImage *)image
 {
-    _image = image;
     self.imageData = UIImageJPEGRepresentation(image, 0.8);
     [self setThumbnailDataFromImage:image];
 }
@@ -34,10 +32,8 @@
     if (!self.imageData) {
         return nil;
     }
-    if (!_image) {
-        _image = [UIImage imageWithData:self.imageData];
-    }
-    return _image;
+    UIImage *image = [UIImage imageWithData:self.imageData];
+    return image;
 }
 
 - (UIImage *)thumbnail
